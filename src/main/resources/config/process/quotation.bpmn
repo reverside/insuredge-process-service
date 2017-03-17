@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" 
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+             xmlns:activiti="http://activiti.org/bpmn" 
+             xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" 
+             xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" 
+             xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" 
+             xmlns:tns="http://activiti.org/bpmn20" 
+             typeLanguage="http://www.w3.org/2001/XMLSchema" 
+             expressionLanguage="http://www.w3.org/1999/XPath" 
+             targetNamespace="http://activiti.org/bpmn20" 
+             id="insurance-processes" 
+             name="insurance-processes">
+  <process id="quotation" name="quotation" isExecutable="true" isClosed="false" processType="None">
+    <startEvent id="start" name="Start" activiti:formKey="process/quotation/start"></startEvent>
+    <sequenceFlow id="flow1" sourceRef="start" targetRef="prepare"></sequenceFlow>
+    <userTask id="prepare" name="Prepare" activiti:candidateGroups="underwriter" activiti:formKey="/tasks/quotation/prepare">
+      <documentation>${reference}|Quotation Request</documentation>
+    </userTask>
+    <sequenceFlow id="flow2" sourceRef="prepare" targetRef="generate"></sequenceFlow>
+    <serviceTask id="generate" name="generate" activiti:expression="#{serviceGateway.invoke('services/quotation', 'POST', data)}">
+    </serviceTask>
+    <sequenceFlow id="flow3" sourceRef="generate" targetRef="end"></sequenceFlow>
+    <endEvent id="end" name="End"></endEvent>
+  </process>
+</definitions>

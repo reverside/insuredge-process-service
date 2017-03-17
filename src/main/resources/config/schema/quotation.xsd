@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+    targetNamespace="http://schema.reverside.co.za/process"
+	xmlns:tns="http://schema.reverside.co.za/process"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	jaxb:version="2.1"
+    elementFormDefault="qualified">
+    
+    
+    <element name="QuotationData">
+    	<complexType>
+    		<sequence>
+    		    <element name="applicant">
+    		    	<complexType>
+    		    		<sequence>
+    		    			<element name="firstName" type="string"/>
+							<element name="lastName" type="string"/>
+							<element name="maritalStatus" type="string"/>
+							<element name="gender" type="string"/>
+							<element name="dateOfBirth" type="string"/>
+							<element name="mobile" type="string"/>
+							<element name="email" type="string"/>
+							<element name="address" type="string"/>
+    		    		</sequence>
+    		    	</complexType>
+    		    </element>
+    		    <element name="product" minOccurs="1" maxOccurs="10">
+    		    	<complexType>
+    		    		<sequence>
+    		    			<element name="car">
+    		    				<complexType>
+    		    					<sequence>
+    		    						<element name="year" type="string"/>
+							    		<element name="make" type="string"/>
+							    		<element name="model" type="string"/>
+							    		<element name="description" type="string"/>
+    		    					</sequence>
+    		    				</complexType>
+    		    			</element>
+    		    			<element name="driver">
+    		    				<complexType>
+    		    					<sequence>
+    		    						<element name="firstName" type="string"/>
+										<element name="lastName" type="string"/>
+										<element name="maritalStatus" type="string"/>
+										<element name="gender" type="string"/>
+										<element name="dateOfBirth" type="string"/>
+										<element name="claimFreeYears" type="string"/>
+										<element name="typeOfLicense" type="string"/>
+										<element name="dateOfLicense" type="string"/>
+    		    					</sequence>
+    		    				</complexType>
+    		    			</element>
+    		    			<element name="more">
+    		    				<complexType>
+    		    					<sequence>
+    		    						<element name="parkingType" type="string"/>
+    		    						<element name="coverType" type="string"/>
+    		    					</sequence>
+    		    				</complexType>
+    		    			</element>
+    		    			<element name="amount">
+    		    				<complexType>
+    		    					<sequence>
+    		    						<element name="premium" type="string"/>
+    		    						<element name="excess" type="string"/>
+    		    					</sequence>
+    		    				</complexType>
+    		    			</element>
+    		    		</sequence>
+    		    	</complexType>
+    		    </element>
+    		    	
+    		</sequence>
+    	</complexType>
+    </element>
+
+
+    <element name="QuotationStart">
+    	<complexType>
+    		<sequence>
+    		    <element name="applicant">
+    		    	<complexType>
+    		    		<sequence>
+    		    			<element name="firstName" type="string"/>
+							<element name="lastName" type="string"/>
+							<element name="maritalStatus" type="string"/>
+							<element name="gender" type="string"/>
+							<element name="dateOfBirth" type="string"/>
+							<element name="mobile" type="string"/>
+							<element name="email" type="string"/>
+							<element name="address" type="string"/>
+    		    		</sequence>
+    		    	</complexType>
+    		    </element>
+    		    <element name="product" minOccurs="1" maxOccurs="10">
+    		    	<complexType>
+    		    		<sequence>
+    		    			<element name="car">
+    		    				<complexType>
+    		    					<sequence>
+    		    						<element name="year" type="string"/>
+							    		<element name="make" type="string"/>
+							    		<element name="model" type="string"/>
+							    		<element name="description" type="string"/>
+    		    					</sequence>
+    		    				</complexType>
+    		    			</element>
+    		    			<element name="driver">
+    		    				<complexType>
+    		    					<sequence>
+    		    						<element name="firstName" type="string"/>
+										<element name="lastName" type="string"/>
+										<element name="maritalStatus" type="string"/>
+										<element name="gender" type="string"/>
+										<element name="dateOfBirth" type="string"/>
+										<element name="claimFreeYears" type="string"/>
+										<element name="typeOfLicense" type="string"/>
+										<element name="dateOfLicense" type="string"/>
+    		    					</sequence>
+    		    				</complexType>
+    		    			</element>
+    		    			<element name="more">
+    		    				<complexType>
+    		    					<sequence>
+    		    						<element name="parkingType" type="string"/>
+    		    						<element name="coverType" type="string"/>
+    		    					</sequence>
+    		    				</complexType>
+    		    			</element>
+    		    		</sequence>
+    		    	</complexType>
+    		    </element>
+    		    	
+    		</sequence>
+    	</complexType>
+    </element>
+    
+    
+        <element name="QuotationPrepareQuery">
+    	<complexType>
+    		<sequence>
+    		    <element name="applicant">
+    		    	<complexType>
+    		    		<sequence>
+    		    			<element name="firstName" type="string"/>
+							<element name="lastName" type="string"/>
+							<element name="maritalStatus" type="string"/>
+							<element name="gender" type="string"/>
+							<element name="dateOfBirth" type="string"/>
+							<element name="mobile" type="string"/>
+							<element name="email" type="string"/>
+							<element name="address" type="string"/>
+    		    		</sequence>
+    		    	</complexType>
+    		    </element>
+    		    <element name="product" minOccurs="1" maxOccurs="10">
+    		    	<complexType>
+    		    		<sequence>
+    		    			<element name="car">
+    		    				<complexType>
+    		    					<sequence>
+    		    						<element name="year" type="string"/>
+							    		<element name="make" type="string"/>
+							    		<element name="model" type="string"/>
+							    		<element name="description" type="string"/>
+    		    					</sequence>
+    		    				</complexType>
+    		    			</element>
+    		    			<element name="driver">
+    		    				<complexType>
+    		    					<sequence>
+    		    						<element name="firstName" type="string"/>
+										<element name="lastName" type="string"/>
+										<element name="maritalStatus" type="string"/>
+										<element name="gender" type="string"/>
+										<element name="dateOfBirth" type="string"/>
+										<element name="claimFreeYears" type="string"/>
+										<element name="typeOfLicense" type="string"/>
+										<element name="dateOfLicense" type="string"/>
+    		    					</sequence>
+    		    				</complexType>
+    		    			</element>
+    		    			<element name="more">
+    		    				<complexType>
+    		    					<sequence>
+    		    						<element name="parkingType" type="string"/>
+    		    						<element name="coverType" type="string"/>
+    		    					</sequence>
+    		    				</complexType>
+    		    			</element>
+    		    			<element name="amount">
+    		    				<complexType>
+    		    					<sequence>
+    		    						<element name="premium" type="string"/>
+    		    						<element name="excess" type="string"/>
+    		    					</sequence>
+    		    				</complexType>
+    		    			</element>
+    		    		</sequence>
+    		    	</complexType>
+    		    </element>
+    		    	
+    		</sequence>
+    	</complexType>
+    </element>
+    
+    
+        <element name="QuotationPrepareCommand">
+    	<complexType>
+    		<sequence>
+    		    <element name="product" minOccurs="1" maxOccurs="10">
+    		    	<complexType>
+    		    		<sequence>
+    		    			<element name="amount">
+    		    				<complexType>
+    		    					<sequence>
+    		    						<element name="premium" type="string"/>
+    		    						<element name="excess" type="string"/>
+    		    					</sequence>
+    		    				</complexType>
+    		    			</element>
+    		    		</sequence>
+    		    	</complexType>
+    		    </element>
+    		    	
+    		</sequence>
+    	</complexType>
+    </element>
+   
+   
+       
+   
+    
+</schema>
