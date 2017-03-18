@@ -1,0 +1,124 @@
+<div class="container" ng-init="init()">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Prepare Quotation</h2>
+            <hr/>
+        </div>
+    </div>
+    <div class="row">
+    	<div class="col-md-12">
+    		<div>
+    			<h3>Applicant Detail</h3>
+    			<div class="form-group">
+    				<label>Full Name</label>
+    				<input ng-model="task.data.applicant.firstName "  class="form-control" >
+    			</div>
+    			<div class="form-group">
+    				<label>Last Name</label>
+    				<input ng-model="task.data.applicant.lastName"  class="form-control" >
+    			</div>
+    			<div class="form-group">
+    				<label>Gender</label>
+    				<input ng-model="task.data.applicant.gender" class="form-control" >
+    			</div>
+    			<div class="form-group">
+    				<label>Marital Status</label>
+    				<input ng-model="task.data.applicant.maritalStatus" class="form-control" >
+    			</div>
+    			<div class="form-group">
+    				<label>Date of Birth</label>
+    				<input ng-model="task.data.applicant.dateOfBirth" class="form-control" >
+    			</div>
+    			<div class="form-group">
+    				<label>Mobile</label>
+    				<input ng-model="task.data.applicant.mobile" class="form-control" >
+    			</div>
+    			<div class="form-group">
+    				<label>Email</label>
+    				<input ng-model="task.data.applicant.email" class="form-control" >
+    			</div>
+    			<div class="form-group">
+    				<label>Address</label>
+    				<input ng-model="task.data.applicant.address" class="form-control" >
+    			</div>
+    			
+    		</div>
+    		<div ng-repeat="product in task.data.product">
+    		    <h3>Product #{{$index +1}} : {{product.car.make}}</h3>
+    		    <hr>
+	    		<div>
+	    			<h4>Car Detail</h4>
+	    			<div class="form-group">
+	    				<label>Car Age</label>
+	    				<input ng-model="product.car.year "  class="form-control" >
+	    			</div>
+	    			<div class="form-group">
+	    				<label>Make</label>
+	    				<input ng-model="product.car.make"  class="form-control" >
+	    			</div>
+	    			<div class="form-group">
+	    				<label>Model</label>
+	    				<input ng-model="product.car.model" class="form-control" >
+	    			</div>
+	    			<div class="form-group">
+	    				<label>Description</label>
+	    				<input ng-model="product.car.description" class="form-control" >
+	    			</div>
+	    		</div>
+	    		<div>
+	    			<h4>Driver Detail</h4>
+	    			<div class="form-group">
+	    				<label>Full Name</label>
+	    				<input ng-model="product.driver.firstName "  class="form-control" >
+	    			</div>
+	    			<div class="form-group">
+	    				<label>Last Name</label>
+	    				<input ng-model="product.driver.lastName"  class="form-control" >
+	    			</div>
+	    			<div class="form-group">
+	    				<label>Gender</label>
+	    				<input ng-model="product.driver.gender" class="form-control" >
+	    			</div>
+	    			<div class="form-group">
+	    				<label>Marital Status</label>
+	    				<input ng-model="product.driver.maritalStatus" class="form-control" >
+	    			</div>
+	    			<div class="form-group">
+	    				<label>Date of Birth</label>
+	    				<input ng-model="product.driver.dateOfBirth" class="form-control" >
+	    			</div>
+	    			<div class="form-group">
+	    				<label>Claim Free Years</label>
+	    				<input ng-model="product.driver.claimFreeYears" class="form-control" >
+	    			</div>
+	    			<div class="form-group">
+	    				<label>License Type</label>
+	    				<input ng-model="product.driver.typeOfLicense" class="form-control" >
+	    			</div>
+	    			<div class="form-group">
+	    				<label>Date Of License</label>
+	    				<input ng-model="product.driver.dateOfLicense" class="form-control" >
+	    			</div>
+	    		</div>
+	    		<hr>
+	    		<div>
+	    			<h4>Additional Info</h4>
+	    			<div class="form-group">
+	    				<label>Parking Type</label>
+	    				<input ng-model="product.more.parkingType "  class="form-control" >
+	    			</div>
+	    			<div class="form-group">
+	    				<label>Cover Type</label>
+	    				<input ng-model="product.more.coverType"  class="form-control" >
+	    			</div>
+	    			
+	    		</div>
+	    		
+	    		<hr>
+	    	</div>
+    		<div class="form-group text-right">
+    				<button class="btn btn-danger" ng-click="start()" >Start</button>
+    			</div>
+    	</div>
+    </div>
+</div>
