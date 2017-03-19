@@ -1,124 +1,252 @@
-<div class="container" ng-init="init()">
-    <div class="row">
-        <div class="col-md-12">
-            <h2>Prepare Quotation</h2>
-            <hr/>
-        </div>
+<div class="container-fluid" ng-init="init()">
+    <div class="row" style="background: aliceblue;">
+
+		<div class="col-md-12">
+			<div style="margin-top: 10px;">
+				<span style="font-size: 24px; font-style: normal; font-weight: 300;">Quotation Application</span>
+			</div>
+			<hr style="margin-top: 10px; margin-bottom: 0px; margin-left: -15px; margin-right: -15px;"/>
+		</div>
     </div>
+
+	<div class="row" style="background: yellow;" ng-if="reference">
+
+		<div class="col-md-12 text-right">
+
+			Your application received.
+
+		</div>
+		<div class="col-md-12">
+			{{reference}}
+		</div>
+
+	</div>
+
     <div class="row">
-    	<div class="col-md-12">
-    		<div>
-    			<h3>Applicant Detail</h3>
-    			<div class="form-group">
-    				<label>Full Name</label>
-    				<input ng-model="task.data.applicant.firstName "  class="form-control" >
-    			</div>
-    			<div class="form-group">
-    				<label>Last Name</label>
-    				<input ng-model="task.data.applicant.lastName"  class="form-control" >
-    			</div>
-    			<div class="form-group">
-    				<label>Gender</label>
-    				<input ng-model="task.data.applicant.gender" class="form-control" >
-    			</div>
-    			<div class="form-group">
-    				<label>Marital Status</label>
-    				<input ng-model="task.data.applicant.maritalStatus" class="form-control" >
-    			</div>
-    			<div class="form-group">
-    				<label>Date of Birth</label>
-    				<input ng-model="task.data.applicant.dateOfBirth" class="form-control" >
-    			</div>
-    			<div class="form-group">
-    				<label>Mobile</label>
-    				<input ng-model="task.data.applicant.mobile" class="form-control" >
-    			</div>
-    			<div class="form-group">
-    				<label>Email</label>
-    				<input ng-model="task.data.applicant.email" class="form-control" >
-    			</div>
-    			<div class="form-group">
-    				<label>Address</label>
-    				<input ng-model="task.data.applicant.address" class="form-control" >
-    			</div>
-    			
-    		</div>
-    		<div ng-repeat="product in task.data.product">
-    		    <h3>Product #{{$index +1}} : {{product.car.make}}</h3>
-    		    <hr>
-	    		<div>
-	    			<h4>Car Detail</h4>
+
+		<div class="col-md-12">
+			<div style="padding-top: 10px; padding-bottom: 10px;" class="text-right">
+				<span style="font-size: 18px; font-style: normal; font-weight: 500; color: darkgray; letter-spacing: 1px; text-transform: capitalize;">Applicant Detail</span>
+			</div>
+			<hr style="margin-top: 0px; margin-bottom: 5px; margin-left: -15px; margin-right: -15px; "/>
+		</div>
+	</div>
+
+	<div class="row">
+
+    	<div class="col-md-8">
+			<div class="form-group">
+				<label style="font-weight: 100;">Full Name</label>
+				<input ng-model="data.applicant.firstName "  class="form-control" >
+			</div>
+		</div>
+
+		<div class="col-md-4">
+			<div class="form-group">
+				<label style="font-weight: 100;">Last Name</label>
+				<input ng-model="data.applicant.lastName"  class="form-control" >
+			</div>
+    	</div>
+
+		<div class="col-md-4">
+			<div class="form-group">
+				<label style="font-weight: 100;">Gender</label>
+				<input ng-model="data.applicant.gender" class="form-control" >
+			</div>
+		</div>
+
+		<div class="col-md-4">
+			<div class="form-group">
+				<label style="font-weight: 100;">Marital Status</label>
+				<input ng-model="data.applicant.maritalStatus" class="form-control" >
+			</div>
+		</div>
+
+		<div class="col-md-4">
+			<div class="form-group">
+				<label style="font-weight: 100;">Date of Birth</label>
+				<input ng-model="data.applicant.dateOfBirth" class="form-control" >
+			</div>
+		</div>
+
+		<div class="col-md-4">
+			<div class="form-group">
+				<label style="font-weight: 100;">Mobile</label>
+				<input ng-model="data.applicant.mobile" class="form-control" >
+			</div>
+		</div>
+
+		<div class="col-md-4">
+			<div class="form-group">
+				<label style="font-weight: 100;">Email</label>
+				<input ng-model="data.applicant.email" class="form-control" >
+			</div>
+		</div>
+
+		<div class="col-md-4">
+			<div class="form-group">
+				<label style="font-weight: 100;">Address</label>
+				<input ng-model="data.applicant.address" class="form-control" >
+			</div>
+		</div>
+
+		<div class="col-md-12">
+			<hr style="margin-top: 10px; margin-bottom: 0px; margin-left: -15px; margin-right: -15px; border-top: dashed 1px lightgray;"/>
+		</div>
+
+	</div>
+
+    <div ng-repeat="product in data.product" class="row">
+
+		<div class="col-md-12 text-right">
+			<div style="padding-top: 20px; padding-bottom: 10px;" class="text-right">
+				<span style="font-size: 18px; font-style: normal; font-weight: 500; color: darkgray; letter-spacing: 1px; text-transform: capitalize;">{{product.car.make}} : Product/{{$index +1}}</span>
+			</div>
+			<hr style="margin-top: 0px; margin-bottom: 10px; margin-left: -15px; margin-right: -15px; "/>
+		</div>
+
+		<div class="col-md-12">
+			<div>
+				<span>Car Detail</span>
+			</div>
+		</div>
+		<div class="col-md-3">
 	    			<div class="form-group">
-	    				<label>Car Age</label>
+	    				<label style="font-weight: 100;">Age</label>
 	    				<input ng-model="product.car.year "  class="form-control" >
 	    			</div>
+		</div>
+		<div class="col-md-3">
 	    			<div class="form-group">
-	    				<label>Make</label>
+	    				<label style="font-weight: 100;">Make</label>
 	    				<input ng-model="product.car.make"  class="form-control" >
 	    			</div>
+		</div>
+		<div class="col-md-3">
 	    			<div class="form-group">
-	    				<label>Model</label>
+	    				<label style="font-weight: 100;">Model</label>
 	    				<input ng-model="product.car.model" class="form-control" >
 	    			</div>
+		</div>
+		<div class="col-md-3">
 	    			<div class="form-group">
-	    				<label>Description</label>
+	    				<label style="font-weight: 100;">Description</label>
 	    				<input ng-model="product.car.description" class="form-control" >
 	    			</div>
-	    		</div>
-	    		<div>
-	    			<h4>Driver Detail</h4>
+		</div>
+
+		<div class="col-md-12">
+			<div>
+				<span>Driver Detail</span>
+			</div>
+		</div>
+
+		<div class="col-md-3">
 	    			<div class="form-group">
-	    				<label>Full Name</label>
+	    				<label style="font-weight: 100;">Full Name</label>
 	    				<input ng-model="product.driver.firstName "  class="form-control" >
 	    			</div>
+		</div>
+
+		<div class="col-md-3">
 	    			<div class="form-group">
-	    				<label>Last Name</label>
+	    				<label style="font-weight: 100;">Last Name</label>
 	    				<input ng-model="product.driver.lastName"  class="form-control" >
 	    			</div>
+
+		</div>
+		<div class="col-md-3">
 	    			<div class="form-group">
-	    				<label>Gender</label>
+	    				<label style="font-weight: 100;">Gender</label>
 	    				<input ng-model="product.driver.gender" class="form-control" >
 	    			</div>
+		</div>
+		<div class="col-md-3">
 	    			<div class="form-group">
-	    				<label>Marital Status</label>
+	    				<label style="font-weight: 100;">Marital Status</label>
 	    				<input ng-model="product.driver.maritalStatus" class="form-control" >
 	    			</div>
+		</div>
+
+		<div class="col-md-3">
+			<div class="form-group">
+				<label style="font-weight: 100;">Date of Birth</label>
+				<input ng-model="product.driver.dateOfBirth" class="form-control" >
+			</div>
+		</div>
+
+		<div class="col-md-3">
+			<div class="form-group">
+				<label style="font-weight: 100;">Claim Free Years</label>
+				<input ng-model="product.driver.claimFreeYears" class="form-control" >
+			</div>
+		</div>
+
+		<div class="col-md-3">
+			<div class="form-group">
+				<label style="font-weight: 100;">License Type</label>
+				<input ng-model="product.driver.typeOfLicense" class="form-control" >
+			</div>
+		</div>
+
+		<div class="col-md-3">
+			<div class="form-group">
+				<label style="font-weight: 100;">Date Of License</label>
+				<input ng-model="product.driver.dateOfLicense" class="form-control" >
+			</div>
+		</div>
+
+		<div class="col-md-12">
+			<div>
+				<span>More Detail</span>
+			</div>
+		</div>
+		<div class="col-md-3">
 	    			<div class="form-group">
-	    				<label>Date of Birth</label>
-	    				<input ng-model="product.driver.dateOfBirth" class="form-control" >
-	    			</div>
-	    			<div class="form-group">
-	    				<label>Claim Free Years</label>
-	    				<input ng-model="product.driver.claimFreeYears" class="form-control" >
-	    			</div>
-	    			<div class="form-group">
-	    				<label>License Type</label>
-	    				<input ng-model="product.driver.typeOfLicense" class="form-control" >
-	    			</div>
-	    			<div class="form-group">
-	    				<label>Date Of License</label>
-	    				<input ng-model="product.driver.dateOfLicense" class="form-control" >
-	    			</div>
-	    		</div>
-	    		<hr>
-	    		<div>
-	    			<h4>Additional Info</h4>
-	    			<div class="form-group">
-	    				<label>Parking Type</label>
+	    				<label style="font-weight: 100;">Parking Type</label>
 	    				<input ng-model="product.more.parkingType "  class="form-control" >
 	    			</div>
+		</div>
+
+		<div class="col-md-3">
 	    			<div class="form-group">
-	    				<label>Cover Type</label>
+	    				<label style="font-weight: 100;">Cover Type</label>
 	    				<input ng-model="product.more.coverType"  class="form-control" >
 	    			</div>
-	    			
-	    		</div>
-	    		
-	    		<hr>
-	    	</div>
-    		<div class="form-group text-right">
-    				<button class="btn btn-danger" ng-click="start()" >Start</button>
-    			</div>
-    	</div>
+		</div>
+
+
+
+
+		<div class="col-md-12 col-xs-12">
+			<hr style="margin-top: 10px; margin-bottom: 15px; margin-left: -15px; margin-right: -15px; border-top: dashed 1px lightgray;"/>
+		</div>
+
+
+
+
+
+
     </div>
+
+	<div class="row">
+
+		<div class="col-md-6 col-sm-6 col-xs-8 text-left">
+			<button class="btn btn-info" ng-click="addCar()" >Add Car</button>
+			<button class="btn btn-danger" ng-click="removeCar()">Del Car</button>
+		</div>
+
+
+
+
+		<div class="col-md-6 col-sm-6 col-xs-4 text-right">
+
+				<button class="btn btn-success" ng-click="start()" >Apply</button>
+
+		</div>
+
+	</div>
+
+	<br>
+	<br>
 </div>

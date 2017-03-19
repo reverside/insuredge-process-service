@@ -11,31 +11,31 @@
     			<h3>Applicant Detail</h3>
     			<div class="form-group">
     				<label>Full Name</label>
-    				<input ng-model="task.data.applicant.firstName "  class="form-control" disabled>
+    				<input ng-model="data.applicant.firstName "  class="form-control" disabled>
     			</div>
     			<div class="form-group">
     				<label>Last Name</label>
-    				<input ng-model="task.data.applicant.lastName"  class="form-control" disabled>
+    				<input ng-model="data.applicant.lastName"  class="form-control" disabled>
     			</div>
     			<div class="form-group">
     				<label>Gender</label>
-    				<input ng-model="task.data.applicant.gender" class="form-control" disabled>
+    				<input ng-model="data.applicant.gender" class="form-control" disabled>
     			</div>
     			<div class="form-group">
     				<label>Marital Status</label>
-    				<input ng-model="task.data.applicant.maritalStatus" class="form-control" disabled>
+    				<input ng-model="data.applicant.maritalStatus" class="form-control" disabled>
     			</div>
     			<div class="form-group">
     				<label>Date of Birth</label>
-    				<input ng-model="task.data.applicant.dateOfBirth" class="form-control" disabled>
+    				<input ng-model="data.applicant.dateOfBirth" class="form-control" disabled>
     			</div>
     			<div class="form-group">
     				<label>Address</label>
-    				<input ng-model="task.data.applicant.address" class="form-control" disabled>
+    				<input ng-model="data.applicant.address" class="form-control" disabled>
     			</div>
     			
     		</div>
-    		<div ng-repeat="product in task.data.product">
+    		<div ng-repeat="product in data.product">
     		    <h3>Product #{{$index +1}} : {{product.car.make}}</h3>
     		    <hr>
 	    		<div>

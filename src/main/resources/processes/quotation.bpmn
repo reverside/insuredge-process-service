@@ -16,7 +16,7 @@
     <startEvent id="start" name="Start" activiti:formKey="process/quotation/start"></startEvent>
     <sequenceFlow id="flow1" sourceRef="start" targetRef="prepare"></sequenceFlow>
     <userTask id="prepare" name="Prepare" activiti:candidateGroups="underwriter" activiti:formKey="/tasks/quotation/prepare">
-      <documentation>${reference}|Quotation Request</documentation>
+      <documentation>${reference}|Please prepare a quoation for this request.</documentation>
     </userTask>
     <sequenceFlow id="flow2" sourceRef="prepare" targetRef="generate"></sequenceFlow>
     <serviceTask id="generate" name="generate" activiti:expression="#{serviceGateway.invoke('services/quotation', 'POST', data)}">

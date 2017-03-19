@@ -1,15 +1,15 @@
-app.controller('QuotationStartCtrl', function($scope, $controller) {
+app.controller('QuotationStartProcessCtrl', function($scope, $controller, $anchorScroll) {
 
-	$controller('TaskCtrl', {$scope: $scope});
-	
-	$scope.task = {
-		data: {
-			product: [{}]
-		}	
-	};
-	
+	$controller('ProcessCtrl', {$scope: $scope});
+
 	$scope.init = function(){
-		console.log("Hello");
+		$scope.process = "quotation";
+		$scope.data = { product: [{}]};
+		$anchorScroll();
+	};
+
+	$scope.addCar = function(){
+		$scope.data.product.push({});
 	};
 
 });
