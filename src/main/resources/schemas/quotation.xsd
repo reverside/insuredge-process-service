@@ -10,6 +10,7 @@
     <element name="QuotationData">
     	<complexType>
     		<sequence>
+    			<element name="documentLocation"  type="string"/>
     		    <element name="applicant">
     		    	<complexType>
     		    		<sequence>

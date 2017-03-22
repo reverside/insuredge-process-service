@@ -19,9 +19,19 @@
       <documentation>${reference}|Please prepare a quoation for this request.</documentation>
     </userTask>
     <sequenceFlow id="flow2" sourceRef="prepare" targetRef="generate"></sequenceFlow>
-    <serviceTask id="generate" name="generate" activiti:expression="#{serviceGateway.invoke('services/quotation', 'POST', data)}">
-    </serviceTask>
-    <sequenceFlow id="flow3" sourceRef="generate" targetRef="end"></sequenceFlow>
+    <serviceTask id="generate" name="generate" activiti:expression="#{serviceGateway.post('http://localhost:9002/api/quotations/generate', data)}"></serviceTask>
+    <sequenceFlow id="flow3" sourceRef="generate" targetRef="update"></sequenceFlow>
+    <scriptTask id="update" name="update" scriptFormat="JavaScript" activiti:autoStoreVariables="false">
+    	<script>
+    		var data  = execution.getVariable('data');
+    		data.documentLocation = "HelloManmay";
+    	</script>
+    </scriptTask>
+    <sequenceFlow id="flow32" sourceRef="update" targetRef="store"></sequenceFlow>
+    <serviceTask id="store" name="store" activiti:expression="#{serviceGateway.post('http://localhost:9002/api/quotations/store', data)}"></serviceTask>
+    <sequenceFlow id="flow4" sourceRef="store" targetRef="notify"></sequenceFlow>
+    <serviceTask id="notify" name="notify" activiti:expression="#{serviceGateway.post('http://localhost:9002/api/quotations/notify', data)}"></serviceTask> 
+    <sequenceFlow id="flow5" sourceRef="notify" targetRef="end"></sequenceFlow>
     <endEvent id="end" name="End"></endEvent>
   </process>
 </definitions>
